@@ -1,0 +1,96 @@
+<!DOCTYPE html>           
+<html lang="en">
+  <head>
+    <style>
+     .sidebar {
+
+      position: fixed;
+
+      }
+      
+    </style>
+    <title>information</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+  </head>
+  <body>
+        
+        <div class="wrapper d-flex align-items-stretch" >
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+                <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo">Vehicle Hub</a></h1>
+            <ul class="list-unstyled components mb-5">
+              <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Traffic Signs </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="http://127.0.0.1:5000/ms ">Mandatory Signs </a>
+                </li>
+                
+                <li>
+                    <a href="http://127.0.0.1:5000/cs">Cautionary Signs</a>
+                </li>
+
+                <li>
+                    <a href="http://127.0.0.1:5000/is">Informatory Signs</a>
+                </li>
+           
+                </ul>
+
+               <li>
+                    <a href="http://127.0.0.1:5000/fts">Functions of traffic signs</a>
+                </li>
+              
+              
+            <li>
+                    <a href="http://127.0.0.1:5000/its">Importance of traffic signs </a>
+                </li>
+              <li>
+
+
+
+
+
+          </div>
+
+
+        </nav>
+     <div id="content" class="p-4 p-md-5 pt-5">
+      <h1 class="mb-4"><u>Importance of traffic signs in daily life.
+</u></h1>
+
+<h3><p> 
+As per official data, almost 400 road accidents happen in India every day. Also, as per statistics shared by WHO, road mishaps cost almost 3% of the total gross domestic product of a country. Hence, the road signs play an important role in the daily life of all road users.<br><br>
+
+● For starters, the road signs prevent mishaps from occurring on the road, thereby safeguarding the vehicle users and pedestrians alike.<br>
+● Traffic signs also ensure that the road users follow basic rules, thereby reducing the chances of the commitment of traffic offences.<br>
+● Traffic signs also help in easy navigation of the routes.<br><br>
+
+Every road users, be it a vehicle-user or a pedestrian, should give utmost importance to road signs. As we said, it is important for all applicants of driving license to understand road signs and keeping them in mind can actually help one avoid mishaps.
+<br>
+
+
+</p></h5>
+
+
+
+ 
+              
+
+        <script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/popper.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+  </body>
+</html>

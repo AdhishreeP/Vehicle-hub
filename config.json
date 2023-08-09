@@ -1,0 +1,20 @@
+{
+
+  "params":
+
+  {
+   "local_server":"True",
+    "local_uri":"mysql+pymysql://root:@localhost/login",
+    "prod_uri":"mysql+pymysql://root:@localhost/login",
+
+    "tw_url":"https://twitter.com/vehicle_Hub",
+
+    "fb_url":"https://www.facebook.com/profile.php?id=100069877781784",
+    "ins_url":"https://www.instagram.com/vehicle_hub_48914",
+    "gmail-user":"vehiclehub48914@gmail.com",
+    "gmail-password":"Vehiclehub@2506"
+  }
+
+
+
+}

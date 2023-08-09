@@ -1,0 +1,408 @@
+Python JSON
+
+JSON stands for JavaScript Object Notation, which is a widely used data format for data interchange on the web. JSON is the ideal format for organizing data between a client and a server. Its syntax is similar to the JavaScript programming language. The main objective of JSON is to transmit the data between the client and the web server. It is easy to learn and the most effective way to interchange the data. It can be used with various programming languages such as Python, Perl, Java, etc.
+
+JSON mainly supports 6 types of data type In JavaScript:
+
+    String
+    Number
+    Boolean
+    Null
+    Object
+    Array
+
+JSON is built on the two structures:
+
+    It stores data in the name/value pairs. It is treated as an object, record, dictionary, hash table, keyed list.
+    The ordered list of values is treated as an array, vector, list, or sequence.
+
+JSON data representation is similar to the Python dictionary. Below is an example of JSON data:
+
+    {  
+     "book": [  
+      {   
+           "id": 01,  
+    "language": "English",  
+    "edition": "Second",  
+    "author": "Derrick Mwiti"   
+    ],  
+       {  
+      {   
+        "id": 02,  
+    "language": "French",  
+    "edition": "Third",  
+    "author": "Vladimir"   
+    }  
+    }  
+
+Working with Python JSON
+
+Python provides a module called json. Python supports standard library marshal and pickle module, and JSON API behaves similarly as these library. Python natively supports JSON features.
+
+The encoding of JSON data is called Serialization. Serialization is a technique where data transforms in the series of bytes and transmitted across the network.
+
+The deserialization is the reverse process of decoding the data that is converted into the JSON format.
+
+This module includes many built-in functions.
+
+Let's have a look at these functions:
+
+    import json  
+    print(dir(json))  
+
+Output:
+
+['JSONDecodeError', 'JSONDecoder', 'JSONEncoder', '__all__', '__author__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', '_default_decoder', '_default_encoder', 'codecs', 'decoder', 'detect_encoding', 'dump', 'dumps', 'encoder', 'load', 'loads', 'scanner']
+
+In this section, we will learn the following methods:
+
+    load()
+    loads()
+    dump()
+    dumps()
+
+Serializing JSON
+
+Serialization is the technique to convert the Python objects to JSON. Sometimes, computer need to process lots of information so it is good to store that information into the file. We can store JSON data into file using JSON function. The json module provides the dump() and dumps() method that are used to transform Python object.
+
+Python objects are converted into the following JSON objects. The list is given below:
+
+
+img//////////
+
+
+    The dump() function
+
+Writing JSON Data into File
+
+Python provides a dump() function to transmit(encode) data in JSON format. It accepts two positional arguments, first is the data object to be serialized and second is the file-like object to which the bytes needs to be written.
+
+Let's consider the simple serialization example:
+
+    Import json  
+    # Key:value mapping  
+    student  = {  
+    "Name" : "Peter",  
+    "Roll_no" : "0090014",  
+    "Grade" : "A",  
+    "Age": 20,  
+        "Subject": ["Computer Graphics", "Discrete Mathematics", "Data Structure"]  
+    }  
+      
+    with open("data.json","w") as write_file:  
+        json.dump(student,write_file)  
+
+Output:
+
+{"Name" : "Peter", "Roll_no" : "0090014" , "Grade" : "A",  "Age" : 20, "Subject" : ["Computer Graphics", "Discrete Mathematics", "Data Structure"] }
+
+In the above program, we have opened a file named data.json in writing mode. We opened this file in write mode because if the file doesn't exist, it will be created. The json.dump() method transforms dictionary into JSON string.
+
+    The dumps () function
+
+The dumps() function is used to store serialized data in the Python file. It accepts only one argument that is Python data for serialization. The file-like argument is not used because we aren't not writing data to disk. Let's consider the following example:
+
+    import json  
+    # Key:value mapping  
+    student  = {  
+    "Name" : "Peter",  
+    "Roll_no" : "0090014",  
+    "Grade" : "A",  
+    "Age": 20  
+    }  
+    b = json.dumps(student)  
+      
+    print(b)  
+
+Output:
+
+{"Name": "Peter", "Roll_no": "0090014", "Grade": "A", "Age": 20}
+
+JSON supports primitive data types, such as strings and numbers, as well as nested list, tuples and objects.
+
+    import json  
+      
+    #Python  list conversion to JSON  Array   
+    print(json.dumps(['Welcome', "to", "javaTpoint"]))  
+      
+    #Python  tuple conversion to JSON Array   
+    print(json.dumps(("Welcome", "to", "javaTpoint")))  
+      
+    # Python string conversion to JSON String   
+    print(json.dumps("Hello"))  
+      
+    # Python int conversion to JSON Number   
+    print(json.dumps(1234))  
+      
+    # Python float conversion to JSON Number   
+    print(json.dumps(23.572))  
+      
+    # Boolean conversion to their respective values   
+    print(json.dumps(True))  
+    print(json.dumps(False))  
+      
+    # None value to null   
+    print(json.dumps(None))   
+
+Output:
+
+["Welcome", "to", "javaTpoint"]
+["Welcome", "to", "javaTpoint"]
+"Hello"
+1234
+23.572
+true
+false
+null
+
+Deserializing JSON
+
+Deserialization is the process to decode the JSON data into the Python objects. The json module provides two methods load() and loads(), which are used to convert JSON data in actual Python object form. The list is given below:
+img////////The above table shows the inverse of the serialized table but technically it is not a perfect conversion of the JSON data. It means that if we encode the object and decode it again after sometime; we may not get the same object back.
+
+Let's take real-life example, one person translates something into Chinese and another person translates back into English, and that may not be exactly translated. Consider the simple example:
+
+    import json  
+    a = (10,20,30,40,50,60,70)  
+    print(type(a))  
+    b = json.dumps(a)  
+    print(type(json.loads(b)))  
+
+Output:
+
+<class 'tuple'>
+<class 'list'>
+
+    The load() function
+
+The load() function is used to deserialize the JSON data to Python object from the file. Consider the following example:
+
+    import json  
+    # Key:value mapping  
+    student  = {  
+    "Name" : "Peter",  
+    "Roll_no" : "0090014",  
+    "Grade" : "A",  
+    "Age": 20,  
+    }  
+      
+    with open("data.json","w") as write_file:  
+        json.dump(student,write_file)  
+      
+    with open("data.json", "r") as read_file:  
+        b = json.load(read_file)  
+    print(b)  
+
+Output:
+
+{'Name': 'Peter', 'Roll_no': '0090014', 'Grade': 'A', 'Age': 20}
+
+In the above program, we have encoded Python object in the file using dump() function. After that we read JSON file using load() function, where we have passed read_file as an argument.
+
+The json module also provides loads() function, which is used to convert JSON data to Python object. It is quite similar to the load() function. Consider the following example:
+
+    Import json  
+    a = ["Mathew","Peter",(10,32.9,80),{"Name" : "Tokyo"}]  
+      
+    # Python object into JSON   
+    b = json.dumps(a)  
+      
+    # JSON into Python Object  
+    c = json.loads(b)  
+    print(c)  
+
+Output:
+
+['Mathew', 'Peter', [10, 32.9, 80], {'Name': 'Tokyo'}]
+
+json.load() vs json.loads()
+
+The json.load() function is used to load JSON file, whereas json.loads() function is used to load string.
+json.dump() vs json.dumps()
+
+The json.dump() function is used when we want to serialize the Python objects into JSON file and json.dumps() function is used to convert JSON data as a string for parsing and printing.
+Python Pretty Print JSON
+
+Sometimes we need to analyze and debug a large amount of JSON data. It can be done by passing additional arguments indent and sort_keys in json.dumps() and json.dump() methods.
+Note: Both dump() and dumps() functions accept indent and short_keys arguments.
+
+Consider the following example:
+
+    import json  
+      
+    person = '{"Name": "Andrew","City":"English", "Number":90014, "Age": 23,"Subject": ["Data Structure","Computer Graphics", "Discrete mathematics"]}'  
+      
+    per_dict = json.loads(person)  
+      
+    print(json.dumps(per_dict, indent = 5, sort_keys= True))  
+
+Output:
+
+{
+    "Age": 23,
+    "City": "English",
+    "Name": "Andrew",
+    "Number": 90014,
+    "Subject": [
+        "Data Structure",
+        "Computer Graphics",
+        "Discrete mathematics"
+    ]
+}
+
+In the above code, we have provided the 5 spaces to the indent argument and the keys are sorted in ascending order. The default value of indent is None and the default value of sort_key is False.
+Encoding and Decoding
+
+Encoding is the technique for transforming the text or values into an encrypted form. Encrypted data can only be used by the preferred user by decoding it. Encoding is also known as serialization and decoding is also called deserialization. Encoding and decoding are done for JSON(object) format. Python provides a popular package for such operations. We can install it on Windows by the following command:
+
+    pip install demjson  
+
+Encoding - The demjson package provides encode() function that is used to convert the Python object into a JSON string representation. The syntax is given below:
+
+    demjson.encode(self,obj,nest_level = 0)  
+
+Example:1 - Encoding using demjson package
+
+    import demjson  
+    a = [{"Name": 'Peter',"Age":20, "Subject":"Electronics"}]  
+    print(demjson.encode(a))  
+
+Output:
+
+[{"Age":20,"Name":"Peter","Subject":"Electronics"}]
+
+Decoding-The demjson module provides decode() function, which is used to convert JSON object into Python format type. The syntax is given below:
+
+    Import demjson  
+    a = "['Peter', 'Smith', 'Ricky', 'Hayden']"  
+    print(demjson.decode(a))  
+
+Output:
+
+['Peter', 'Smith', 'Ricky', 'Hayden']
+
+In this tutorial, we have learned about the Python JSON. JSON is the most effective way to transmit data between the client and the web server.
+The above table shows the inverse of the serialized table but technically it is not a perfect conversion of the JSON data. It means that if we encode the object and decode it again after sometime; we may not get the same object back.
+
+Let's take real-life example, one person translates something into Chinese and another person translates back into English, and that may not be exactly translated. Consider the simple example:
+
+    import json  
+    a = (10,20,30,40,50,60,70)  
+    print(type(a))  
+    b = json.dumps(a)  
+    print(type(json.loads(b)))  
+
+Output:
+
+<class 'tuple'>
+<class 'list'>
+
+    The load() function
+
+The load() function is used to deserialize the JSON data to Python object from the file. Consider the following example:
+
+    import json  
+    # Key:value mapping  
+    student  = {  
+    "Name" : "Peter",  
+    "Roll_no" : "0090014",  
+    "Grade" : "A",  
+    "Age": 20,  
+    }  
+      
+    with open("data.json","w") as write_file:  
+        json.dump(student,write_file)  
+      
+    with open("data.json", "r") as read_file:  
+        b = json.load(read_file)  
+    print(b)  
+
+Output:
+
+{'Name': 'Peter', 'Roll_no': '0090014', 'Grade': 'A', 'Age': 20}
+
+In the above program, we have encoded Python object in the file using dump() function. After that we read JSON file using load() function, where we have passed read_file as an argument.
+
+The json module also provides loads() function, which is used to convert JSON data to Python object. It is quite similar to the load() function. Consider the following example:
+
+    Import json  
+    a = ["Mathew","Peter",(10,32.9,80),{"Name" : "Tokyo"}]  
+      
+    # Python object into JSON   
+    b = json.dumps(a)  
+      
+    # JSON into Python Object  
+    c = json.loads(b)  
+    print(c)  
+
+Output:
+
+['Mathew', 'Peter', [10, 32.9, 80], {'Name': 'Tokyo'}]
+
+json.load() vs json.loads()
+
+The json.load() function is used to load JSON file, whereas json.loads() function is used to load string.
+json.dump() vs json.dumps()
+
+The json.dump() function is used when we want to serialize the Python objects into JSON file and json.dumps() function is used to convert JSON data as a string for parsing and printing.
+Python Pretty Print JSON
+
+Sometimes we need to analyze and debug a large amount of JSON data. It can be done by passing additional arguments indent and sort_keys in json.dumps() and json.dump() methods.
+Note: Both dump() and dumps() functions accept indent and short_keys arguments.
+
+Consider the following example:
+
+    import json  
+      
+    person = '{"Name": "Andrew","City":"English", "Number":90014, "Age": 23,"Subject": ["Data Structure","Computer Graphics", "Discrete mathematics"]}'  
+      
+    per_dict = json.loads(person)  
+      
+    print(json.dumps(per_dict, indent = 5, sort_keys= True))  
+
+Output:
+
+{
+    "Age": 23,
+    "City": "English",
+    "Name": "Andrew",
+    "Number": 90014,
+    "Subject": [
+        "Data Structure",
+        "Computer Graphics",
+        "Discrete mathematics"
+    ]
+}
+
+In the above code, we have provided the 5 spaces to the indent argument and the keys are sorted in ascending order. The default value of indent is None and the default value of sort_key is False.
+Encoding and Decoding
+
+Encoding is the technique for transforming the text or values into an encrypted form. Encrypted data can only be used by the preferred user by decoding it. Encoding is also known as serialization and decoding is also called deserialization. Encoding and decoding are done for JSON(object) format. Python provides a popular package for such operations. We can install it on Windows by the following command:
+
+    pip install demjson  
+
+Encoding - The demjson package provides encode() function that is used to convert the Python object into a JSON string representation. The syntax is given below:
+
+    demjson.encode(self,obj,nest_level = 0)  
+
+Example:1 - Encoding using demjson package
+
+    import demjson  
+    a = [{"Name": 'Peter',"Age":20, "Subject":"Electronics"}]  
+    print(demjson.encode(a))  
+
+Output:
+
+[{"Age":20,"Name":"Peter","Subject":"Electronics"}]
+
+Decoding-The demjson module provides decode() function, which is used to convert JSON object into Python format type. The syntax is given below:
+
+    Import demjson  
+    a = "['Peter', 'Smith', 'Ricky', 'Hayden']"  
+    print(demjson.decode(a))  
+
+Output:
+
+['Peter', 'Smith', 'Ricky', 'Hayden']
+
+In this tutorial, we have learned about the Python JSON. JSON is the most effective way to transmit data between the client and the web server.

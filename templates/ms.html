@@ -1,0 +1,100 @@
+<!DOCTYPE html>           
+<html lang="en">
+  <head>
+    <style>
+     .sidebar {
+
+      position: fixed;
+
+      }
+      
+    </style>
+    <title>information</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+  </head>
+  <body>
+        
+        <div class="wrapper d-flex align-items-stretch" >
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+                <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo">Vehicle Hub</a></h1>
+            <ul class="list-unstyled components mb-5">
+              <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Traffic Signs </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="http://127.0.0.1:5000/ms ">Mandatory Signs </a>
+                </li>
+                
+                <li>
+                    <a href="http://127.0.0.1:5000/cs">Cautionary Signs</a>
+                </li>
+
+                <li>
+                    <a href="http://127.0.0.1:5000/is">Informatory Signs</a>
+                </li>
+           
+                </ul>
+
+               <li>
+                    <a href="http://127.0.0.1:5000/fts">Functions of traffic signs</a>
+                </li>
+              
+              
+            <li>
+                    <a href="http://127.0.0.1:5000/its">Importance of traffic signs </a>
+                </li>
+              <li>
+
+
+
+
+
+          </div>
+
+
+        </nav>
+     <div id="content" class="p-4 p-md-5 pt-5">
+      <h1 class="mb-4"><u>Mandatory Signs</u></h1>
+
+<h4><p> As understood from the name, these are the road signs that need to be followed compulsorily, failing which, one might be issued a challan by the traffic cops. These signs are used to make sure that free movement of traffic isn’t hampered, while the road users are made aware of the specific laws, such as those of speed limits and no parking zones.
+
+</p></h5>
+
+
+
+  <div class="card-img">
+                <img margin-left: auto 
+  margin-right: auto 
+  width: 50% src="{{ url_for('static',filename='assets/img/t1.png')}}" alt="...">
+              </div>
+
+    <div class="card-img">
+                <img margin-left: auto 
+  margin-right: auto 
+  width: 50% src="{{ url_for('static',filename='assets/img/t2.png')}}" alt="...">
+              </div>
+              <div class="card-img">
+                <img margin-left: auto 
+  margin-right: auto 
+  width: 50% src="{{ url_for('static',filename='assets/img/t3.png')}}" alt="...">
+              </div>
+              
+        <script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/popper.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+  </body>
+</html>

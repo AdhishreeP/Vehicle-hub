@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"  http-equiv="refresh">
+    <title>Title</title>
+</head>
+<style>
+.frame
+{
+width:500;
+}
+    .img1
+    {
+    width :550px;
+    height : 400px;
+    margin-left: 50px;
+    margin-top: 50px;
+    }
+    .img2
+    {
+    width :500px;
+    height : 180px;
+    margin-left: 1000px;
+    margin-top: -350px;
+    }
+    .label1
+    {
+      width: 50px;
+      height : 80px;
+      display:block;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 60px;
+      margin-left: 1000px;
+      margin-top: 150px;
+    }
+    .label2
+    {
+      width: 50px;
+      height : 80px;
+      display:block;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 50px;
+      margin-left: 1100px;
+      margin-top: 15px;
+      color:  midnightblue;
+    }
+</style>
+<body bgcolor="aliceblue" class="frame">
+
+                  <div class="img1" align="left" >
+                <img src="{{ url_for('static', filename='assets/img/car.png')}}" alt="..." width="900" height="700">
+
+              </div>
+              <div class="img2" align="right | top">
+                <img src="{{ url_for('static', filename='assets/img/1.png')}}" alt="...">
+
+              </div><br>
+                  <p class = "label1"> Number_Detected </p>
+
+                  <p class="label2"><u>{{number}}</u></p>
+
+
+</body>
+</html>
